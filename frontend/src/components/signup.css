@@ -1,0 +1,99 @@
+/* signin.css */
+
+.container1 {
+  width: 70%;
+  margin: 10%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header1 {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+
+  justify-content: space-between;
+  margin-bottom: 20px;
+  text-align: center; /* Center align text within .header1 */
+}
+
+.header1 .text {
+  font-size: 44px;
+  font-weight: bold;
+  color: #333;
+  margin: 0; /* Remove default margin */
+}
+
+.header1 .underline {
+  flex-grow: 1; /* Take up remaining space */
+  height: 2px;
+  background-color: #ccc;
+  margin: 10px; /* Adjust margin as needed */
+}
+
+
+.inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5rem;
+}
+
+.input {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.input input[type="text"],
+.input input[type="email"],
+.input input[type="password"],
+.input input[type="number"] {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-container1 {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit.gray {
+  background-color: #ccc;
+  color: #333;
+}
+
+.submit:hover {
+  background-color: #3e8e41;
+}

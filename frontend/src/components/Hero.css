@@ -1,0 +1,36 @@
+.hero{
+    width:100%;
+    min-height:100vh;
+    background:linear-gradient(rgba(152, 184, 140, 0.7),rgba(127, 123, 156, 0.7)),url('../assets/photo22.jpg');
+    background-size:cover;
+    background-position:center;
+    color: #000;;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.hero-text{
+    text-align:center;
+    max-width:800px;
+}
+.hero-text h1{
+font-size:70px;
+font-weight:500;
+}
+.hero-text p{
+    max-width:600px;
+    margin:1px auto 20;
+  line-height: 1.4;
+    font-size:35px;
+    }
+.butt{
+        background:#000;
+        color:whitesmoke;
+        padding:20px;
+        border-radius:50px;
+        cursor:auto;
+        border:0;
+        outline:0;
+        font-size:30px;
+        display:inline-flex;
+      }
