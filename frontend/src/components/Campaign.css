@@ -1,0 +1,87 @@
+
+ .campaign-driver h1{
+  color:black;
+}
+
+.campaign-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    background-color: rgb(231, 231, 231);
+    color:black;
+    font-size: 18px;
+    text-align: center;
+    width:700px;  
+}
+.campaign-form >  p {
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  font-size: 10px;
+
+}
+
+p1{
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  color:rgb(87, 209, 117);
+  font-size: 15px;
+
+}
+
+campaign-driver{
+    display: block;
+    font-weight: bold;
+   
+}
+
+input[type="text"],
+textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background-color: #ccc;
+    color:#000000;
+}
+
+
+input[type="integer"],
+textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background-color: #ccc;
+    color:#000000;
+    
+}
+
+input[type="file"] {
+    display: block;
+    margin-top: 20px;
+    text-align:center!important;
+}
+
+button[type="submit"] {
+    background-color: #09823c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+} 
+input[type="file"] {
+  display: block;
+  margin: 30px auto; /* add auto margin to center horizontally */
+  text-align: center !important;
+}

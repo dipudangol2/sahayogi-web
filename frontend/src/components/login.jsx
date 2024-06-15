@@ -1,13 +1,14 @@
 
 import { useState } from "react";
 import './login.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import email_icon from '../assets/email.png'
 import password_icon from '../assets/password.png'
 
 const Login = () => {
-  // const history = useHistory(); 
+  // const history = useHistory();
   // Initialize useHistory hook
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,6 +33,8 @@ const Login = () => {
       const data = await response.json();
       if (data.success) {
         alert('Login successful');
+        navigate('/')
+
       } else {
         alert('Login failed: ' + data.message);
       }
@@ -81,7 +84,7 @@ const Login = () => {
           <span onClick={() => alert("Go to your email and click on the reset button to update your password!")}>Click Here</span>
         </div>
 
-        <button className="submit" type="submit">Submit</button>
+        <button className="submit" type="submit">Login</button>
       </form>
       <div className="signup">
         <p>

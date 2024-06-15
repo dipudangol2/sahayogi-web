@@ -9,5 +9,4 @@ const UserSchema = new mongoose.Schema({
   zip: { type: Number, required: true },
   balance:{type:Number, default:0}
 });
-
 export const User = mongoose.model("users", UserSchema);

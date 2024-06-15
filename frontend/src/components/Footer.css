@@ -4,9 +4,9 @@ body {
   font-family: "Poppins", sans-serif;
 }
 .footer-container {
-  padding-right: 5%;
+  /* padding-right: 5%;
   padding-left: 5px;
-  padding-top: 55px;
+  padding-top: 55px; */
 }
 .Footer {
   display: flex;

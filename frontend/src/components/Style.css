@@ -1,0 +1,98 @@
+.donate-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .donate-card {
+    display: flex;
+    flex-direction: row;
+    width: 80%; /* Increase the width of the card */
+    max-width: 1200px; /* Set a maximum width for larger screens */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color:#B0A990;
+  }
+  
+  .donate-card-image {
+    width: 40%; /* Adjust the width of the image container */
+  }
+  
+  .donate-card-image img {
+    width: 100%;
+    height: auto;
+    border-right: 1px solid #ccc;
+  }
+  
+  .username {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #000;
+    text-transform: uppercase;
+  }
+  
+  .donate-card-content {
+    padding: 20px;
+    width: 60%; 
+  }
+  
+  .project-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .goal {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .donate-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .donate-btn:hover {
+    background-color: #218838;
+  }
+  
+  .stats-container {
+    margin-top: 20px;
+    width: 80%; /* Ensure stats container matches the card width */
+    max-width: 1200px; /* Set a maximum width for larger screens */
+    background-color:#B0A990;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stat p {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .stat span {
+    font-weight: bold;
+  }

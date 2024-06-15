@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Form Styles */
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  background-color: rgb(231, 231, 231);
+  color: black;
+  padding: 20px;
+  font-size: 18px;
+  text-align: left;
+  width: 100%; 
+  margin: 0 auto;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="number"],
+input[type="Payment"],
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  background-color: #ccc;
+  width: 100%; 
+}
+input[type="file"] {
+  display: block;
+  margin-top: 20px;
+}
+
+button[type="submit"] {
+  background-color: #09823c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.diver {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 768px) {
+ .diver {
+    width: 60%;
+  }
+  label {
+    margin-bottom: 10px;
+  }
+  input, textarea, select {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  button[type="submit"] {
+    padding: 10px;
+    font-size: 18px;
+  }
+}
+/* Tablet Styles */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+ .diver {
+    width: 80%; 
+  }
+  label {
+    font-size: 16px;
+  }
+  input, textarea, select {
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+  button[type="submit"] {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 479px) {
+ .diver {
+    width: 90%; 
+  }
+  label {
+    font-size: 14px;
+  }
+  input, textarea, select {
+    padding: 6px;
+    margin-bottom: 10px;
+  }
+  button[type="submit"] {
+    font-size: 14px;
+  }
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(152, 184, 140, 0.7), rgba(127, 123, 156, 0.7)), url(/src/assets/photo22.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive styles */
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    min-height: 80vh; 
+    background-size: 100% 100%; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero {
+    min-height: 60vh; 
+    background-size: 100% 100%; 
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .hero {
+    min-height: 40vh; 
+    background-size: 100% 100%; 
+  }
+}
