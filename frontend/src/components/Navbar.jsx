@@ -22,7 +22,14 @@ const Navbar = () => {
             <Link className='btn'>Servicess</Link>
           </li>
           <li><Link to={'/login'} className='btn'>Login</Link></li>
+          <li>
+            <Link to={"/"} onClick={() => {
+              localStorage.clear()
+              window.location.reload()
+            }} className='btn'>Logout</Link>
+          </li>
         </ul>
+
       </nav>
 
     </div>

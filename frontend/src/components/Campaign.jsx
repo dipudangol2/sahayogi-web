@@ -33,7 +33,6 @@ const CreateCampaignPage = () => {
     // If there are no validation errors, perform necessary actions with the form data
     if (Object.keys(validationErrors).length === 0) {
       const formData = new FormData();
-      formData.append("userName", userName);
       formData.append("campaignName", campaignName);
       formData.append("description", description);
       formData.append("goal", goal);

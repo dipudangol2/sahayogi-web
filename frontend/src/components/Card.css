@@ -1,129 +1,36 @@
-/* Card.css */
+.dashboard .info-card{
+    padding-bottom:10px;
+}
 
-/* General card container */
-.inside-card {
-    width: 75%;
-    margin: auto;
-  }
-  
-  .in-card {
-    margin-top: 5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-  }
-  
-  /* Individual card styling */
-  .id-card {
-    background-color: white;
-    color: black;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 100%;
-    max-width: 350px;
-  }
-  
-  .id-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Image styling */
-  .image-card {
-    height: 200px;
-    background-color: #3b82f6; /* Tailwind indigo-500 color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image-card img {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  /* Content container */
-  .container-card {
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  /* Name styling */
-  .name-card {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Cause description styling */
-  .cause-card {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Button styling */
-  .button-card {
-    background-color: #007bff;
-    color: white;
-    font-size: 1rem;
-    padding: 0.5rem 1.5rem;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .button-card:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 1024px) {
-    .inside-card {
-      width: 90%;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .inside-card {
-      width: 100%;
-    }
-  
-    .id-card {
-      width: 80%;
-    }
-  }
-  
-  @media (max-width: 640px) {
-    .id-card {
-      width: 100%;
-    }
-  
-    .image-card {
-      height: 150px;
-    }
-  
-    .image-card img {
-      height: 100px;
-      width: 100px;
-    }
-  
-    .name-card {
-      font-size: 1rem;
-    }
-  
-    .cause-card {
-      font-size: 0.875rem;
-    }
-  
-    .button-card {
-      font-size: 0.875rem;
-      padding: 0.5rem 1rem;
-    }
-  }
-   
+.dashboard .info-card h6{
+    font-size:28px;
+    font-weight:700;
+    color:#0f0f0f;
+    margin:0;
+    padding:0;
+}
+
+.dashboard .card-info{
+    font-size: 32px;
+    line-height:1.5em;
+    width:64px;
+    height:64px;
+    flex-shrink:0;
+    flex-grow:0;
+}
+
+.dashboard .sales-card .card-icon{
+    color:#4154f1;
+    background:#f6f6fe;
+}
+
+.dashboard .revenue-card .card-icon{
+    color: #2eca2e;
+    background:#e0f8e9;
+}
+
+.dashboard .customers-card .card-icon{
+    color:#ff771d;
+    background: #ffecdf;
+}
+

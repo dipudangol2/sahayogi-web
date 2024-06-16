@@ -32,8 +32,12 @@ const Login = () => {
       });
       const data = await response.json();
       if (data.success) {
+        console.log(data);
+        localStorage.setItem('email', data.session.user.email);
         alert('Login successful');
         navigate('/')
+        window.location.reload();
+
 
       } else {
         alert('Login failed: ' + data.message);

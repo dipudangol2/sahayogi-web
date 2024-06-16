@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Card from './Card'; // Import the Card component
+import Carrd from './Carrd'; // Import the Card component
 
 const CampaignList = () => {
     const [data, setData] = useState([]);
@@ -24,7 +24,7 @@ const CampaignList = () => {
     return (
         <div>
             <h1>Campaigns</h1>
-            <Card data={data} />
+            <Carrd data={data} />
         </div>
     );
 };

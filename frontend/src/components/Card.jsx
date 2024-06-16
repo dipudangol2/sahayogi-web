@@ -1,40 +1,55 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import './Card.css';
+import React, { useState } from 'react';
+import './card.css';
+import CardFilter from './CardFilter';
 
-function Card({ data }) {
-  console.log(data);
+function Card({ card }) {
+  if (!card) {
+    return null; // or return a loading indicator, etc.
+  }
+
+  const [filter, setFilter] = useState('Today');
+  const handleFilterChange = (filter) => {
+    setFilter(filter);
+  };
+
   return (
-    <div className="inside-card">
-      <div className="in-card">
-        {data?.map((d) => (
-          <div key={d._id} className="id-card">
-            <div className="image-card">
-              <img src={'http://localhost:5000' + d.imageUrl} alt={d.campaignName} />
+    <div className="col-xxl-4 col-md-6">
+      <div className="card info-card sales-card">
+        <CardFilter filterChange={handleFilterChange} />
+        <div className="card-body">
+          <h5 className="card-title">
+            {card.name}<span>|{filter}</span>
+          </h5>
+
+          <div className="d-flex align-items-center">
+            <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
+              <i className={card.icon}></i>
             </div>
-            <div className="container-card">
-              <p className="name-card">{d.campaignName}</p>
-              <p className="cause-card">{d.description}</p>
-              <Link to={`/donate/${d._id}`}>
-                <button className="button-card">Donate Now</button>
-              </Link>
+            <div className="ps-3">
+              <h6>
+                {card.name === 'Revenue'
+                  ? '$' + card.amount.toLocaleString('en-US')
+                  : card.amount.toLocaleString('en-US')}
+              </h6>
+              <span
+                className={`${
+                  card.percentage > 0 ? 'text-success' : 'text-danger'
+                } small pt-1 fw-bold`}
+              >
+                {card.percentage > 0
+                  ? card.percentage.toFixed(2) * 100
+                  : -card.percentage.toFixed(2) * 100}
+                %
+              </span>
+              <span className="text-muted small pt-2 ps-1">
+                {card.percentage > 0 ? 'increase' : 'decrease'}
+              </span>
             </div>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
 }
-Card.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string.isRequired,
-      imageUrl: PropTypes.string.isRequired,
-      campaignName: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
 
 export default Card;

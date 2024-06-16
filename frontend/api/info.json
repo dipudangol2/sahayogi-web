@@ -1,0 +1,54 @@
+{
+    "cards": [
+        {
+            "_id":1,
+            "name":"Sales",
+            "amount":145,
+            "icon":"bi bi-cart",
+            "percentage":0.12,
+            "active":true
+        },
+        {
+            "_id":2,
+            "name":"Revenue",
+            "amount":3246,
+            "icon":"bi bi-currency-dollar",
+            "percentage":0.08,
+            "active":false
+        },
+        {
+            "_id":3,
+            "name":"Customers",
+            "amount":95,
+            "icon":"bi bi-people",
+            "percentage":0.14,
+            "active":true  
+        }
+    ],
+    "recentsales":[
+        {
+            "_id":1,
+            "name":"Sales",
+            "amount":145,
+            "icon":"bi bi-cart",
+            "percentage":0.12,
+            "active":true
+        },
+        {
+            "_id":2,
+            "name":"Revenue",
+            "amount":3246,
+            "icon":"bi bi-currency-dollar",
+            "percentage":0.08,
+            "active":false
+        },
+        {
+            "_id":3,
+            "name":"Customers",
+            "amount":95,
+            "icon":"bi bi-people",
+            "percentage":0.14,
+            "active":true
+        }
+    ]
+}

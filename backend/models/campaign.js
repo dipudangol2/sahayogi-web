@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const CampaignSchema = new mongoose.Schema({
-  userName: String,
+  userName: { String },
   campaignName: { type: String, required: true },
   description: { type: String, required: true },
   goal: { type: Number, required: true },
@@ -13,7 +13,7 @@ const CampaignSchema = new mongoose.Schema({
   endsAt: {
     type: String,
     default: `${
-     `${ new Date().getDate()}`.split(" ")[2] + 7
+      `${new Date().getDate()}`.split(" ")[2] + 7
     }/${new Date().getMonth()}/${new Date().getFullYear()}`,
   },
   fundCollected: { type: Number, default: 0 },

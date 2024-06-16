@@ -27,7 +27,7 @@ function ProjectDetail() {
     <div className="donate-card-container">
       <div className="donate-card">
         <div className="donate-card-image">
-          <img src="../public/rafah.jpg" alt="Project Image" />
+          <img src={"http://localhost:5000"+projectData.imageUrl} alt="Project Image" />
           <span className="username">{projectData.userName}</span>
         </div>
         <div className="donate-card-content">

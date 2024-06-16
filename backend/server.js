@@ -5,6 +5,7 @@ import { User } from "./models/user.js";
 import { Campaign } from "./models/campaign.js";
 import { Expense } from "./models/expense.js";
 import { Donation } from "./models/donation.js";
+import session from "express-session";
 
 import bodyParser from "body-parser";
 import multer from "multer";
@@ -15,6 +16,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 const port = 5000;
+const store = new session.MemoryStore();
 
 // Set up Multer storage configuration
 const storage = multer.diskStorage({
@@ -44,24 +46,52 @@ const upload = multer({ storage: storage });
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use(
+  session({
+    secret: "my-secret-key",
+    cookie: { maxAge: 360000 },
+    saveUninitialized: false,
+    store,
+  })
+);
+app.use((req, res, next) => {
+  
+  next();
+});
 
 app.get("/", (req, res) => {
   res.send("helloo");
 });
 
 app.post("/login", async (req, res) => {
+  console.log(req.session.user);
   const { email, password } = req.body;
-  try {
-    const user = await User.findOne({ email: email, password: password });
-    console.log(user);
-    if (user) {
-      res.json({ success: true });
-    } else {
-      res.json({ success: false, message: "Invalid email or password" });
+  if (req.session.authenticated) {
+    console.log(req.session.authenticated);
+    return res.json(req.session); // Use return to ensure no further execution
+  } else {
+    try {
+      const user = await User.findOne({ email: email, password: password });
+      console.log(user);
+      if (user) {
+        req.session.authenticated = true;
+        req.session.user = {
+          email,
+          password,
+        };
+        return res.json({ success: true, session: req.session }); // Return response with session
+      } else {
+        return res.json({
+          success: false,
+          message: "Invalid email or password",
+        });
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      return res
+        .status(500)
+        .json({ success: false, message: "Internal Server Error" });
     }
-  } catch (error) {
-    console.error("Error during login:", error);
-    res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 });
 
@@ -83,7 +113,9 @@ app.post("/signup", async (req, res) => {
 });
 
 app.post("/api/campaigns/create", upload.single("image"), async (req, res) => {
-  const { userName, campaignName, description, goal } = req.body;
+  const {  campaignName, description, goal } = req.body;
+  console.log(req.sessionid)
+  const userName = req.session
   const imageUrl = req.file ? `/uploads/${req.file.filename}` : "";
   const startDate = new Date();
   const endDate = new Date(startDate.getTime() + 30 * 24 * 60 * 60 * 1000);
@@ -120,7 +152,6 @@ app.get("/api/campaigns", async (req, res) => {
   try {
     const campaigns = await Campaign.find();
     res.json(campaigns);
-    console.log(campaigns);
   } catch (error) {
     console.error("Error fetching campaigns:", error);
     res.status(500).json({ message: "Internal Server Error" });
